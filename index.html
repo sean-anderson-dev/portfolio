@@ -10,12 +10,12 @@
 <body class="font-sans box-border pt-12 overflow-hidden">
 
 <!-- Navbar -->
-<div class="fixed top-0 w-full h-[12vh] bg-gray-800 flex items-center justify-center z-50 shadow-md">
+<div class="fixed top-0 w-full h-[12vh] bg-black flex items-center justify-center z-50 shadow-md">
     <nav id="navigation-scrolling" class="flex justify-center">
         <ul class="flex list-none">
-            <li><a class="text-white text-base px-4 hover:text-gray-400" href="#home-screen">Home</a></li>
-            <li><a class="text-white text-base px-4 hover:text-gray-400" href="#skills-screen">Skills</a></li>
-            <li><a class="text-white text-base px-4 hover:text-gray-400" href="#interests-screen">Interests</a></li>
+            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#home-screen">Home</a></li>
+            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#skills-screen">Skills</a></li>
+            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#interests-screen">Interests</a></li>
         </ul>
     </nav>
 </div>
@@ -25,37 +25,42 @@
     <a href="https://www.linkedin.com/in/seananderson92/" target="_blank">
         <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/linkedin.png" alt="linkedin-link">
     </a>
-    <a href="https://www.seek.com.au/profile/sean-anderson-Tr33gfDwZF" target="_blank">
+    <!-- <a href="https://www.seek.com.au/profile/sean-anderson-Tr33gfDwZF" target="_blank">
         <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/seek.png" alt="seek-link">
+    </a> -->
+    <a href="https://www.github.com/SuperGoldenMan" target="_blank">
+        <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/github.png" alt="github-link">
     </a>
     <a href="mailto:seananderson10@hotmail.co.uk">
         <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/email.png" alt="email-link">
     </a>
 </div>
 
-<!-- Home Screen -->
 <div id="home-screen" class="min-h-[calc(100vh-12vh)] flex items-center justify-center p-5 mt-[12vh] scroll-mt-[12vh]">
-    <div id="left-column" class="w-[40%] flex flex-col justify-center items-center text-center">
-        <h1 class="text-2xl font-bold mb-2">Sean Anderson</h1>
-        <h2 class="font-light text-xl">Software Developer</h2>
-        <h3 class="italic font-light text-lg my-2">BSc Web Design & Development</h3>
-        <div id="summary" class="flex justify-center">
-            <div class="shadow-md rounded-lg p-5 bg-white my-5">
-                <p>A resourceful and practical Professional Designer driven to personally achieve while helping my team to succeed. Abertay University Graduate with Professional Software Development Experience working in Local Government for multiple years.</p>
+    <div class="flex w-full max-w-6xl items-center justify-center gap-10">
+        <!-- Left Column -->
+        <div id="left-column" class="w-1/2 flex flex-col justify-center items-center text-center">
+            <h1 class="text-3xl font-bold mb-2">Sean Anderson</h1>
+            <h2 class="font-light text-xl">Software Developer</h2>
+            <h3 class="italic font-light text-lg my-2">BSc Web Design & Development</h3>
+            <div id="summary" class="flex justify-center">
+                <div class="shadow-md rounded-lg p-5 bg-white my-5 max-w-lg">
+                    <p>A resourceful and practical Professional Designer driven to personally achieve while helping my team to succeed. Abertay University Graduate with Professional Software Development Experience working in Local Government for multiple years.</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="right-column" class="w-[45%] flex flex-col justify-center items-center">
-        <img class="rounded-full mt-5" src="img/portrait.png" alt="Portrait of Sean Anderson">
+
+        <!-- Right Column (Image) -->
+        <div id="right-column" class="w-1/2 flex justify-center items-center">
+            <img class="rounded-full w-100 h-100 object-cover border-2 border-gray-300" src="img/portrait.png" alt="Portrait of Sean Anderson">
+        </div>
     </div>
 </div>
 
 
 <!-- Skills Screen -->
-<!-- Skills Screen -->
 <div class="min-h-[calc(100vh-12vh)] flex flex-col items-center px-10 py-5 scroll-mt-[12vh]" id="skills-screen">
     <h1 id="screen-title" class="text-center text-3xl font-bold mb-10">Skills</h1>
-
     <div id="skill-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl">
         <!-- Skill Card -->
         <div class="relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden" onclick="flipCard(this)">
@@ -63,8 +68,8 @@
                 <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">Front-End Development</h2>
                 <img class="w-full h-full object-cover" src="img/front-end.jpeg" alt="Front-End Development">
             </div>
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-white">
-                <ul class="list-disc text-center">
+            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
+                <ul class="list-none text-center text-xl">
                     <li>HTML5</li>
                     <li>CSS3</li>
                     <li>JavaScript</li>
@@ -79,8 +84,8 @@
                 <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">Back-End Development</h2>
                 <img class="w-full h-full object-cover" src="img/back-end.jpeg" alt="Back-End Development">
             </div>
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-white">
-                <ul class="list-disc text-center">
+            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
+                <ul class="list-none text-center text-xl">
                     <li>PHP</li>
                     <li>Linux</li>
                     <li>SQL</li>
@@ -96,8 +101,8 @@
                 <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">Customer Service</h2>
                 <img class="w-full h-full object-cover" src="img/customer-service.jpeg" alt="Customer Service">
             </div>
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-white">
-                <ul class="list-disc text-center">
+            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
+                <ul class="list-none text-center text-xl">
                     <li>Decade Experience</li>
                     <li>Communication</li>
                     <li>Clarity</li>
@@ -114,7 +119,7 @@
 
 <!-- Interests Screen -->
 <div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="interests-screen">
-    <h1 id="screen-title" class="text-center text-2xl font-bold mb-5">Interests</h1>
+    <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Interests</h1>
 </div>
 
 <!-- Projects Screen (currently commented) -->

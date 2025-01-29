@@ -1,13 +1,18 @@
 document.querySelectorAll('.fixed.top-0 a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            const targetId = this.getAttribute('href'); 
-            const targetElement = document.querySelector(targetId); 
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
 
-            
-            targetElement.scrollIntoView({
-                behavior: 'smooth', 
-                block: 'start' 
-            });
-        });
+        // Check if it's an internal link (starts with #)
+        if (targetId.startsWith("#")) {
+            e.preventDefault(); // Only prevent default for internal links
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
+        }
     });
+});
