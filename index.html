@@ -14,6 +14,7 @@
     <nav id="navigation-scrolling" class="flex justify-center">
         <ul class="flex list-none">
             <li><a class="text-white text-base px-10 hover:text-gray-400" href="#home-screen">Home</a></li>
+            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#projects-screen">Projects</a></li>
             <li><a class="text-white text-base px-10 hover:text-gray-400" href="#skills-screen">Skills</a></li>
             <li><a class="text-white text-base px-10 hover:text-gray-400" href="#interests-screen">Interests</a></li>
         </ul>
@@ -36,6 +37,7 @@
     </a>
 </div>
 
+<!-- Home Screen -->
 <div id="home-screen" class="min-h-[calc(100vh-12vh)] flex items-center justify-center p-5 mt-[12vh] scroll-mt-[12vh]">
     <div class="flex w-full max-w-6xl items-center justify-center gap-10">
         <!-- Left Column -->
@@ -50,96 +52,147 @@
             </div>
         </div>
 
-        <!-- Right Column (Image) -->
+        <!-- Right Column -->
         <div id="right-column" class="w-1/2 flex justify-center items-center">
             <img class="rounded-full w-100 h-100 object-cover border-2 border-gray-300" src="img/portrait.png" alt="Portrait of Sean Anderson">
         </div>
     </div>
-</div>
+</div><!-- Home -->
+
+<!-- Projects Screen -->
+<div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="projects-screen">
+    <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Projects</h1>
+<!-- List of Projects -->
+    <ul class="group/list">
+        <li>
+            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+            <div class="z-10 sm:order-2 sm:col-span-6">
+                <h3>
+                    <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://supergoldenman.github.io/pistons-fansite/" target="_blank" rel="noreferrer noopener" aria-label="pistons-fansite">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>My Detroit Pistons<!-- --> <span class="inline-block">Fansite<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        </span>
+                    </a> 
+                </h3>
+                <p class="mt-2 text-sm leading-normal">
+                    Personal project to showcase my skills in HTML, CSS, and JavaScript. The site is a fan page for the Detroit Pistons NBA team which also utilises python scripts for automation and limiting usage of free APIS.
+                </p>
+                <img alt="Detroit Pistons Preview" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" style="color:transparent" src="img/pistons-preview.jpg">
+            </div>
+        </li>
+    </ul>
+</div><!-- Projects -->
+
 
 
 <!-- Skills Screen -->
 <div class="min-h-[calc(100vh-12vh)] flex flex-col items-center px-10 py-5 scroll-mt-[12vh]" id="skills-screen">
     <h1 id="screen-title" class="text-center text-3xl font-bold mb-10">Skills</h1>
-    <div id="skill-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl">
         <!-- Skill Card -->
-        <div class="relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden" onclick="flipCard(this)">
+        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden">
+    
+            <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">Front-End Development</h2>
+                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
+                    Front-End Development
+                </h2>
                 <img class="w-full h-full object-cover" src="img/front-end.jpeg" alt="Front-End Development">
             </div>
+        
+            <!-- Back Side -->
             <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <ul class="list-none text-center text-xl">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>jQuery</li>
+                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
+                    Front-End Development
+                </h2>
+                <ul class="text-center mt-10">
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="HTML5">HTML5</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="CSS3">CSS3</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="JavaScript">JavaScript</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="jQuery">jQuery</a></li>
                 </ul>
             </div>
-        </div>
+            
+        </div><!-- Skill Card -->
+        
 
         <!-- Skill Card -->
-        <div class="relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden" onclick="flipCard(this)">
+        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden">
+    
+            <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">Back-End Development</h2>
+                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
+                    Back-End Development
+                </h2>
                 <img class="w-full h-full object-cover" src="img/back-end.jpeg" alt="Back-End Development">
             </div>
+        
+            <!-- Back Side -->
             <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <ul class="list-none text-center text-xl">
-                    <li>PHP</li>
-                    <li>Linux</li>
-                    <li>SQL</li>
-                    <li>Python</li>
-                    <li>Git</li>
+                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
+                    Back-End Development
+                </h2>
+                <ul class="text-center mt-10">
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="PHP">PHP</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Linux">Linux</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="SQL">SQL</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Python">Python</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Git">Git</a></li>
                 </ul>
             </div>
-        </div>
+        
+        </div><!-- Skill Card -->
+        
 
         <!-- Skill Card -->
-        <div class="relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden" onclick="flipCard(this)">
+        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden">
+    
+            <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">Customer Service</h2>
+                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
+                    Customer Service
+                </h2>
                 <img class="w-full h-full object-cover" src="img/customer-service.jpeg" alt="Customer Service">
             </div>
+        
+            <!-- Back Side -->
             <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <ul class="list-none text-center text-xl">
-                    <li>Decade Experience</li>
-                    <li>Communication</li>
-                    <li>Clarity</li>
-                    <li>Kindness</li>
-                    <li>Patience</li>
+                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
+                    Customer Service
+                </h2>
+                <ul class="text-center mt-10">
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Decade">Decade of Experience</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Communication">Communication</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Clarity">Clarity</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Patience">Patience</a></li>
                 </ul>
             </div>
-        </div>
+        
+        </div><!-- Skill Card -->
+        
     </div>
-</div>
-
-
+    <!-- Skill Experience Box -->
+        <div id="experience-box" class="hidden w-full m-auto max-w-6xl p-5 bg-white rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+                <h2 id="skill-title" class="text-2xl font-bold"></h2>
+                <button onclick="closeExperienceBox()" class="text-2xl font-bold">×</button>
+            </div>
+        <p id="skill-description" class="mt-3"></p>
+        </div>
+</div><!-- Skills -->
 
 
 <!-- Interests Screen -->
 <div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="interests-screen">
     <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Interests</h1>
-</div>
+</div><!-- Interests -->
 
-<!-- Projects Screen (currently commented) -->
-<!--
-<div class="content" id="projects-screen">
-    <h1 id="screen-title">Projects</h1>
-</div>
--->
 
 <script src="scripts/scroll.js"></script>
-<script>
-    function flipCard(card) {
-    const front = card.querySelector('.front');
-    const back = card.querySelector('.back');
+<script src="scripts/skills.js"></script>
 
-    // Toggle visibility without affecting card height
-    front.classList.toggle('hidden');
-    back.classList.toggle('hidden');
-}
-
-</script>
 </body>
 </html>
