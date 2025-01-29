@@ -7,16 +7,16 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-sans box-border pt-12 overflow-hidden">
+<body class="font-sans box-border pt-12 overflow-auto">
 
 <!-- Navbar -->
 <div class="fixed top-0 w-full h-[12vh] bg-black flex items-center justify-center z-50 shadow-md">
     <nav id="navigation-scrolling" class="flex justify-center">
         <ul class="flex list-none">
-            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#home-screen">Home</a></li>
-            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#projects-screen">Projects</a></li>
-            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#skills-screen">Skills</a></li>
-            <li><a class="text-white text-base px-10 hover:text-gray-400" href="#interests-screen">Interests</a></li>
+            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#home-screen">Home</a></li>
+            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#projects-screen">Projects</a></li>
+            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#skills-screen">Skills</a></li>
+            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#experience-screen">Experience</a></li>
         </ul>
     </nav>
 </div>
@@ -44,9 +44,9 @@
         <div id="left-column" class="w-1/2 flex flex-col justify-center items-center text-center">
             <h1 class="text-3xl font-bold mb-2">Sean Anderson</h1>
             <h2 class="font-light text-xl">Software Developer</h2>
-            <h3 class="italic font-light text-lg my-2">BSc Web Design & Development</h3>
+            <h3 class="italic underline text-lg my-2 text-teal-700">BSc Web Design & Development</h3>
             <div id="summary" class="flex justify-center">
-                <div class="shadow-md rounded-lg p-5 bg-white my-5 max-w-lg">
+                <div class="shadow-md shadow-teal-700 rounded-lg p-5 bg-white my-5 max-w-lg">
                     <p>A resourceful and practical Professional Designer driven to personally achieve while helping my team to succeed. Abertay University Graduate with Professional Software Development Experience working in Local Government for multiple years.</p>
                 </div>
             </div>
@@ -63,25 +63,56 @@
 <div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="projects-screen">
     <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Projects</h1>
 <!-- List of Projects -->
-    <ul class="group/list">
-        <li>
-            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-            <div class="z-10 sm:order-2 sm:col-span-6">
-                <h3>
-                    <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://supergoldenman.github.io/pistons-fansite/" target="_blank" rel="noreferrer noopener" aria-label="pistons-fansite">
-                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                        <span>My Detroit Pistons<!-- --> <span class="inline-block">Fansite<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
-                        </span>
-                        </span>
-                    </a> 
-                </h3>
-                <p class="mt-2 text-sm leading-normal">
-                    Personal project to showcase my skills in HTML, CSS, and JavaScript. The site is a fan page for the Detroit Pistons NBA team which also utilises python scripts for automation and limiting usage of free APIS.
-                </p>
+    <ul class="group/list mt-5">
+        <li class="mb-12">
+            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-black lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                </div>
+                <div class="z-10 sm:order-2 sm:col-span-6">
+                    <h3>
+                        <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://supergoldenman.github.io/pistons-fansite/" target="_blank" rel="noreferrer noopener" aria-label="pistons-fansite">
+                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                            <span>My Detroit Pistons<!-- --> <span class="inline-block">Fansite<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span>
+                        </a> 
+                    </h3>
+                    <p class="mt-2 text-sm leading-normal group-hover:text-white">
+                        Personal project to showcase my skills in HTML, CSS, and JavaScript. The site is a fan page for the Detroit Pistons NBA team which also utilises python scripts for automation and limiting usage of free APIS.
+                    </p>
+                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">HTML5</div></li>
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">CSS3</div></li>
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">NBA API</div></li>
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Python</div></li>                    </ul>
+                </div>
                 <img alt="Detroit Pistons Preview" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" style="color:transparent" src="img/pistons-preview.jpg">
             </div>
         </li>
+<!-- ADD AS WE CREATE   -->
+        <!-- <li class="mb-12">
+            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
+                </div>
+                <div class="z-10 sm:order-2 sm:col-span-6">
+                    <h3>
+                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://spotify-profile.herokuapp.com/" target="_blank" rel="noreferrer noopener" aria-label="Spotify Profile (opens in a new tab)">
+                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                            <span>Spotify(ADD BLANK COMMENT HERE WHEN SECTION IS UNCOMMENTED) <span class="inline-block">Profile<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span>
+                        </a>
+                    </h3>
+                    <p class="mt-2 text-sm leading-normal">
+                        Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.
+                    </p>
+                    <a class="relative mt-2 inline-flex items-center text-sm font-medium text-slate-300 hover:text-teal-300 focus-visible:text-teal-300" href="https://github.com/bchiang7/spotify-profile" target="_blank" rel="noreferrer noopener" aria-label="671 stars on GitHub (opens in a new tab)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-1 h-3 w-3" aria-hidden="true"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path></svg><span>671</span></a>
+                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React</div></li>
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Express</div></li>
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Spotify API</div></li>
+                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Heroku</div></li>
+                    </ul>
+                </div>
+                <img alt="Spotify Profile app homepage" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" style="color:transparent" srcset="/_next/image?url=%2Fimages%2Fprojects%2Fspotify-profile.png&amp;w=256&amp;q=75 1x, /_next/image?url=%2Fimages%2Fprojects%2Fspotify-profile.png&amp;w=640&amp;q=75 2x" src="/_next/image?url=%2Fimages%2Fprojects%2Fspotify-profile.png&amp;w=640&amp;q=75">
+            </div>
+        </li> -->
     </ul>
 </div><!-- Projects -->
 
@@ -93,7 +124,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl">
         <!-- Skill Card -->
-        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden">
+        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
@@ -109,10 +140,10 @@
                     Front-End Development
                 </h2>
                 <ul class="text-center mt-10">
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="HTML5">HTML5</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="CSS3">CSS3</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="JavaScript">JavaScript</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="jQuery">jQuery</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="HTML5">HTML5</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="CSS3">CSS3</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="JavaScript">JavaScript</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="jQuery">jQuery</a></li>
                 </ul>
             </div>
             
@@ -120,7 +151,7 @@
         
 
         <!-- Skill Card -->
-        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden">
+        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
@@ -136,11 +167,11 @@
                     Back-End Development
                 </h2>
                 <ul class="text-center mt-10">
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="PHP">PHP</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Linux">Linux</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="SQL">SQL</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Python">Python</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Git">Git</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="PHP">PHP</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Linux">Linux</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="SQL">SQL</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Python">Python</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Git">Git</a></li>
                 </ul>
             </div>
         
@@ -148,7 +179,7 @@
         
 
         <!-- Skill Card -->
-        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-xl transition-transform bg-white overflow-hidden">
+        <div class="skill-card relative w-full h-[350px] cursor-pointer rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
@@ -164,10 +195,10 @@
                     Customer Service
                 </h2>
                 <ul class="text-center mt-10">
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Decade">Decade of Experience</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Communication">Communication</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Clarity">Clarity</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline hover:bg-white hover:text-sky-700 hover:italic" data-skill="Patience">Patience</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Decade">Decade of Experience</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Communication">Communication</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Clarity">Clarity</a></li>
+                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Patience">Patience</a></li>
                 </ul>
             </div>
         
@@ -175,7 +206,7 @@
         
     </div>
     <!-- Skill Experience Box -->
-        <div id="experience-box" class="hidden w-full m-auto max-w-6xl p-5 bg-white rounded-lg shadow-md">
+        <div id="experience-box" class="hidden w-full m-auto max-w-6xl p-5 bg-white rounded-lg shadow-md shadow-teal-700">
             <div class="flex justify-between items-center">
                 <h2 id="skill-title" class="text-2xl font-bold"></h2>
                 <button onclick="closeExperienceBox()" class="text-2xl font-bold">×</button>
@@ -185,10 +216,55 @@
 </div><!-- Skills -->
 
 
-<!-- Interests Screen -->
-<div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="interests-screen">
-    <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Interests</h1>
-</div><!-- Interests -->
+<!-- Experience Screen -->
+<div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="experience-screen">
+    <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Experience</h1>
+
+    <div class="flex flex-col md:flex-row items-center md:items-start w-full max-w-6xl gap-10">
+        <!-- Left Side (Resume Image) -->
+        <div class="relative w-full md:w-1/2 flex justify-center h-[600px]">
+            <a href="pdf/sean_anderson_cv.pdf" target="_blank" class="relative group">
+                <img src="img/resume.jpg" alt="Resume" class="w-full h-full object-contain shadow-md rounded-lg shadow-teal-700">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity">
+                    <span class="text-white text-lg font-bold flex items-center gap-2">
+                        Click to Download
+                    </span>
+                </div>
+            </a>
+        </div>
+               
+        
+        <!-- Right Side (Job Experience) -->
+        <div class="w-full md:w-1/2">
+            
+            <div class="bg-white shadow-md p-5 rounded-lg border-l-4 border-teal-700 hover:scale-105 transition-transform">
+                <h3 class="text-xl font-semibold">Assistant IT Officer</h3>
+                <p class="text-gray-600 italic">Dundee City Council, Scotland, UK (2022-2024)</p>
+                <p class="mt-2 text-gray-800">
+                    PHP development & migration, Linux system management, network administration, and IT helpdesk assistance. Ensured smooth service delivery by troubleshooting and resolving technical issues.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-md p-5 rounded-lg border-l-4 border-teal-700 mt-5 hover:scale-105 transition-transform"">
+                <h3 class="text-xl font-semibold">Web Development</h3>
+                <p class="text-gray-600 italic">Personal, Freelance</p>
+                <p class="mt-2 text-gray-800">
+                    Practicing and applying a range of coding languages in my own time, both for personal development and fun. I have worked on small projects including building a website for a local business "Wee Weddin' Hoose" based in Arbroath.
+                </p>
+            </div>
+
+            <div class="bg-white shadow-md p-5 rounded-lg border-l-4 border-teal-700 mt-5 hover:scale-105 transition-transform"">
+                <h3 class="text-xl font-semibold">Kitchen Designer</h3>
+                <p class="text-gray-600 italic">Wren Kitchens, Dundee, UK</p>
+                <p class="mt-2 text-gray-800">
+                    Attaining details of the project including wants and budget from the client. Working to create their dream kitchen through use of showroom styles and a range of software to create plans and renders(CGIs) to present to clients for approval.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div><!-- Experience -->
+
 
 
 <script src="scripts/scroll.js"></script>

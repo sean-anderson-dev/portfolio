@@ -10,9 +10,9 @@ const skillDescriptions = {
     "Python": "Personal experience developing scripts and automation tools for my own projects.",
     "Git": "Version control experience with Git and GitHub for collaborative development.",
     "Decade": "Decade of experience in customer service, including retail, food service, and technical support roles.",
-    "Communication": "Years of experience interacting with clients, team members, and general public to ensure smooth project delivery.",
+    "Communication": "Experience interacting with clients, team members, and general public to ensure smooth project delivery.",
     "Clarity": "Strong ability to convey technical concepts in an easy-to-understand manner.",
-    "Patience": "Experience in customer-facing roles requiring patience, problem-solving, and effective communication."
+    "Patience": "Experience in customer-facing roles always showing patience, listening and offering professional service."
 };
 
 // Flip Card Function - Triggered by clicking the header only
@@ -26,12 +26,10 @@ function flipCard(event) {
     back.classList.toggle('hidden');
 }
 
-// Handle Skill Click - Show Experience Box Only (NO flipping)
+// Handle Skill Click - Show Experience Box Only
 document.querySelectorAll('.skill-btn').forEach(button => {
     button.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent default link behavior
-        event.stopPropagation(); // Stop event bubbling so the card doesn't flip
-
         const skill = this.getAttribute('data-skill');
         const description = skillDescriptions[skill] || "No description available.";
 
