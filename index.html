@@ -10,13 +10,13 @@
 <body class="font-sans box-border pt-12 overflow-auto">
 
 <!-- Mobile Navbar -->
-<div class="lg:hidden fixed top-0 w-full h-[12vh] bg-black flex items-center justify-between px-5 z-50 shadow-md">
+<div class="lg:hidden fixed top-0 w-full h-[12vh] bg-black flex items-center px-5 z-50 shadow-md">
     <!-- Hamburger Menu Icon -->
     <button id="mobile-menu-button" class="text-white text-2xl focus:outline-none">
         ☰
     </button>
-    <div class="flex items-center">
-        <span class="text-white text-lg font-semibold tracking-wide">Portfolio</span>
+    <div class="flex ml-auto md:mr-auto">
+        <span class="text-white text-lg md:text-2xl font-semibold tracking-wide">Portfolio</span>
     </div>    
 </div>
 
@@ -86,19 +86,19 @@
 </div><!-- Home -->
 
 <!-- Links Screen -->
- <div id="links-screen" class="lg:hidden min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]">
+ <div id="links-screen" class="lg:hidden flex flex-col items-center p-5 mb-12 scroll-mt-[12vh]">
     <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Links</h1>
-    <div class="flex flex-col items-center gap-20">
-        <a href="https://www.linkedin.com/in/seananderson92/" target="_blank" class="flex items-center gap-2 mt-5 mb-5 bg-white w-full shadow-md shadow-teal-700 p-5 rounded-lg">
+    <div class="flex flex-col items-center gap-20 w-full">
+        <a href="https://www.linkedin.com/in/seananderson92/" target="_blank" class="flex justify-center items-center gap-2 mt-5 mb-5 bg-white w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
             <img class="w-10 h-10 rounded-full" src="img/linkedin.png" alt="linkedin-link">
-            <p>LinkedIn</p></a>
-        <a href="https://www.github.com/SuperGoldenMan" target="_blank" class="flex items-center gap-2 mb-5 bg-black w-full shadow-md shadow-teal-700 p-5 rounded-lg">
+            <p class="text-center">LinkedIn</p></a>
+        <a href="https://www.github.com/SuperGoldenMan" target="_blank" class="flex justify-center items-center gap-2 mb-5 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
             <img class="w-10 h-10 rounded-full" src="img/github.png" alt="github-link">
             <p class="text-white">GitHub</p></a>
-        <a href="mailto:seanaderson10@hotmail.co.uk" class="flex items-center gap-2 mb-5 bg-white w-full shadow-md shadow-teal-700 p-5 rounded-lg">
+        <a href="mailto:seanaderson10@hotmail.co.uk" class="flex justify-center items-center gap-2 mb-5 bg-white w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
             <img class="w-10 h-10 rounded-full" src="img/email.png" alt="email-link">
             <p>Contact Me</p></a>
-        <a href="pdf/sean_anderson_cv.pdf" target="_blank" class="flex items-center gap-2 bg-black w-full shadow-md shadow-teal-700 p-5 rounded-lg">
+        <a href="pdf/sean-anderson-cv.pdf" target="_blank" class="flex justify-center items-center gap-2 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
             <img class="w-10 h-10 rounded-full" src="img/pdf.png" alt="resume-link">
             <p class="text-white">Download CV</p></a> 
     </div>
@@ -266,12 +266,12 @@
 
 
 <!-- Skills Screen -->
-<div class="min-h-[calc(100vh-12vh)] flex flex-col items-center px-10 py-5 scroll-mt-[12vh]" id="skills-screen">
+<div class="lg:min-h-[calc(100vh-12vh)]  flex flex-col items-center px-10 py-5 scroll-mt-[12vh] mb-12" id="skills-screen">
     <h1 id="screen-title" class="text-center text-3xl font-bold mb-10">Skills</h1>
 <!-- Mobile -->
-    <div class="lg:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl">
+    <div class="lg:hidden w-3/4 md:w-3/5 max-w-6xl overflow-x-scroll flex snap-x snap-mandatory">
         <!-- Skill Card -->
-        <div class="skill-card card-header relative w-full h-[350px] rounded-lg shadow-md bg-white overflow-hidden">
+        <div class="skill-card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
@@ -298,7 +298,7 @@
         
 
         <!-- Skill Card -->
-        <div class="skill-card card-header relative w-full h-[350px] rounded-lg shadow-md bg-white overflow-hidden">
+        <div class="skill-card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
@@ -326,7 +326,7 @@
         
 
         <!-- Skill Card -->
-        <div class="skill-card card-header relative w-full h-[350px] rounded-lg shadow-md bg-white overflow-hidden">
+        <div class="skill-card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
@@ -437,14 +437,14 @@
         </div><!-- Skill Card -->
         
     </div>
-    <!-- Skill Experience Box -->
-        <div id="experience-box" class="hidden w-full m-auto max-w-6xl p-5 bg-white rounded-lg shadow-md shadow-teal-700">
-            <div class="flex justify-between items-center">
-                <h2 id="skill-title" class="text-2xl font-bold"></h2>
-                <button onclick="closeExperienceBox()" class="text-2xl font-bold">×</button>
-            </div>
-        <p id="skill-description" class="mt-3"></p>
-        </div>
+    <!-- <div class="container">
+        <h1>Skill Set</h1>
+        <div class="bar learning" data-skill="TDD"></div>
+        <div class="bar back basic" data-skill="Python"></div>
+        <div class="bar back intermediate" data-skill="C#"></div>
+        <div class="bar front advanced" data-skill="CSS3"></div>
+        <div class="bar front expert" data-skill="HTML5"></div>   
+    </div> -->
 </div><!-- Skills -->
 
 
@@ -454,7 +454,7 @@
 
     <div class="flex flex-col md:flex-row items-center md:items-start w-full max-w-6xl gap-10">
         <!-- Left Side (Resume Image) -->
-        <div class="hidden lg:flex relative w-full md:w-1/2 flex justify-center h-[600px]">
+        <div class="hidden mt-20 lg:mt-0 md:flex relative w-full lg:w-1/2 flex justify-center h-[600px]">
             <a href="pdf/sean-anderson-cv.pdf" target="_blank" class="relative group">
                 <img src="img/resume.jpg" alt="Resume" class="w-full h-full object-contain shadow-md rounded-lg shadow-teal-700">
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity">
@@ -467,7 +467,7 @@
                
         
         <!-- Right Side (Job Experience) -->
-        <div class="w-full md:w-1/2">
+        <div class="w-full lg:w-1/2">
             
             <div class="bg-white shadow-md p-5 rounded-lg border-l-4 border-teal-700 hover:scale-105 transition-transform">
                 <h3 class="text-xl font-semibold">Assistant IT Officer</h3>
