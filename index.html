@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Sean Anderson Portfolio</title>
+    <link rel="stylesheet" href="styles/skills.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -266,89 +267,49 @@
 
 
 <!-- Skills Screen -->
-<div class="lg:min-h-[calc(100vh-12vh)]  flex flex-col items-center px-10 py-5 scroll-mt-[12vh] mb-12" id="skills-screen">
-    <h1 id="screen-title" class="text-center text-3xl font-bold mb-10">Skills</h1>
+<div class="lg:min-h-[calc(100vh-12vh)] flex flex-col items-center px-10 py-5 scroll-mt-[12vh] mb-12" id="skills-screen">
+    <h1 id="screen-title" class="text-center text-3xl font-bold mb-10 lg:mb-0">Skills</h1>
+    <h2 class="hidden lg:flex text-center text-xl font-medium mb-10">Click a card to display Skills</h2>
+    <h2 class="flex lg:hidden text-center text-xl font-medium mb-10">Click cards to reveal skills, scroll for more cards</h2>
 <!-- Mobile -->
-    <div class="lg:hidden w-3/4 md:w-3/5 max-w-6xl overflow-x-scroll flex snap-x snap-mandatory">
+    <div class="lg:hidden w-3/4 md:w-3/5 max-w-6xl overflow-x-scroll flex snap-x snap-mandatory shadow-md shadow-teal-700">
         <!-- Skill Card -->
-        <div class="skill-card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center">
+        <div class="card relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center"
+        data-skill="frontend">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">
-                    Front-End Development
-                </h2>
                 <img class="w-full h-full object-cover" src="img/front-end.jpeg" alt="Front-End-Development">
             </div>
         
-            <!-- Back Side -->
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">
-                    Front-End Development
-                </h2>
-                <ul class="text-center mt-10">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>jQuery</li>
-                </ul>
-            </div>
+        
             
         </div><!-- Skill Card -->
         
 
         <!-- Skill Card -->
-        <div class="skill-card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center">
+        <div class="card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center"
+        data-skill="backend">
     
             <!-- Front Side -->
-            <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">
-                    Back-End Development
-                </h2>
+            <div class="absolute inset-0 flex flex-col justify-center items-center">
                 <img class="w-full h-full object-cover" src="img/back-end.jpeg" alt="Back-End-Development">
             </div>
         
-            <!-- Back Side -->
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">
-                    Back-End Development
-                </h2>
-                <ul class="text-center mt-10">
-                    <li>PHP</li>
-                    <li>Linux</li>
-                    <li>SQL</li>
-                    <li>Python</li>
-                    <li>Git</li>
-                </ul>
-            </div>
+    
             
         </div><!-- Skill Card -->
         
 
         <!-- Skill Card -->
-        <div class="skill-card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center">
+        <div class="card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center"
+        data-skill="customer">
     
             <!-- Front Side -->
             <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">
-                    Customer Service
-                </h2>
                 <img class="w-full h-full object-cover" src="img/customer-service.jpeg" alt="Customer-Service">
             </div>
         
-            <!-- Back Side -->
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <h2 class="card-header absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2">
-                    Customer Service
-                </h2>
-                <ul class="text-center mt-10">
-                    <li>Decade of Experience</li>
-                    <li>Communication</li>
-                    <li>Clarity</li>
-                    <li>Patience</li>
-                </ul>
-            </div>
-            
         </div><!-- Skill Card -->
         
     </div>
@@ -356,95 +317,65 @@
 <!-- Desktop -->
     <div class="hidden lg:flex grid-cols-3 gap-8 w-full max-w-6xl">
         <!-- Skill Card -->
-        <div class="skill-card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden">
+        <div class="card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl hover:cursor-pointer transition-transform bg-white overflow-hidden"
+        data-skill="frontend">
     
             <!-- Front Side -->
-            <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="card-header cursor-pointer absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
-                    Front-End Development
-                </h2>
+            <div class="absolute inset-0 flex flex-col justify-center items-center">
                 <img class="w-full h-full object-cover" src="img/front-end.jpeg" alt="Front-End-Development">
             </div>
-        
-            <!-- Back Side -->
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <h2 class="card-header cursor-pointer absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
-                    Front-End Development
-                </h2>
-                <ul class="text-center mt-10">
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="HTML5">HTML5</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="CSS3">CSS3</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="JavaScript">JavaScript</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="jQuery">jQuery</a></li>
-                </ul>
-            </div>
-            
         </div><!-- Skill Card -->
         
 
         <!-- Skill Card -->
-        <div class="skill-card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden">
+        <div class="card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden"
+        data-skill="backend">
     
             <!-- Front Side -->
-            <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="card-header cursor-pointer absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
-                    Back-End Development
-                </h2>
+            <div class="absolute inset-0 flex flex-col justify-center items-center">
                 <img class="w-full h-full object-cover" src="img/back-end.jpeg" alt="Back-End-Development">
             </div>
-        
-            <!-- Back Side -->
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <h2 class="card-header cursor-pointer absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
-                    Back-End Development
-                </h2>
-                <ul class="text-center mt-10">
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="PHP">PHP</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Linux">Linux</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="SQL">SQL</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Python">Python</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Git">Git</a></li>
-                </ul>
-            </div>
-        
         </div><!-- Skill Card -->
         
 
         <!-- Skill Card -->
-        <div class="skill-card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden">
+        <div class="card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl transition-transform bg-white overflow-hidden"
+        data-skill="customer">
     
             <!-- Front Side -->
-            <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <h2 class="card-header cursor-pointer absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
-                    Customer Service
-                </h2>
+            <div class="absolute inset-0 flex flex-col justify-center items-center">
                 <img class="w-full h-full object-cover" src="img/customer-service.jpeg" alt="Customer-Service">
             </div>
-        
-            <!-- Back Side -->
-            <div class="back absolute inset-0 hidden flex flex-col justify-center items-center bg-black text-white">
-                <h2 class="card-header cursor-pointer absolute top-4 left-0 right-0 text-xl font-bold text-center text-white bg-black bg-opacity-50 py-2 hover:italic hover:text-3xl">
-                    Customer Service
-                </h2>
-                <ul class="text-center mt-10">
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Decade">Decade of Experience</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Communication">Communication</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Clarity">Clarity</a></li>
-                    <li><a href="#" class="skill-btn text-white text-xl hover:underline  hover:text-teal-700 hover:italic" data-skill="Patience">Patience</a></li>
-                </ul>
-            </div>
-        
         </div><!-- Skill Card -->
         
     </div>
-    <!-- <div class="container">
-        <h1>Skill Set</h1>
-        <div class="bar learning" data-skill="TDD"></div>
-        <div class="bar back basic" data-skill="Python"></div>
-        <div class="bar back intermediate" data-skill="C#"></div>
-        <div class="bar front advanced" data-skill="CSS3"></div>
-        <div class="bar front expert" data-skill="HTML5"></div>   
-    </div> -->
+
+    <div id="frontend" class="container hidden">
+        <h1 class="justify-center text-center p-5 text-xl">Front-End Development</h1>
+        <div class="bar expert" data-skill="HTML5"></div>
+        <div class="bar advanced" data-skill="CSS3"></div>
+        <div class="bar intermediate" data-skill="JavaScript"></div>
+        <div class="bar intermediate" data-skill="jQuery"></div>
+        <div class="bar basic" data-skill="Tailwind CSS"></div>
+        <div class="bar learning" data-skill="React"></div>   
+    </div>
+
+    <div id="backend" class="container hidden">
+        <h1 class="justify-center text-center p-5 text-xl">Back-End-Development</h1>
+        <div class="bar expert" data-skill="PHP"></div>
+        <div class="bar advanced" data-skill="Linux"></div>
+        <div class="bar intermediate" data-skill="Python"></div>
+        <div class="bar intermediate" data-skill="SQL"></div>
+        <div class="bar basic" data-skill="Git"></div>  
+    </div>
+
+    <div id="customer" class="container hidden">
+        <h1 class="justify-center text-center p-5 text-xl">Customer Service</h1>
+        <div class="bar expert" data-skill="Experience"></div>
+        <div class="bar expert" data-skill="Communication"></div>
+        <div class="bar expert" data-skill="Clarity"></div>
+        <div class="bar expert" data-skill="Patience"></div>
+    </div>
 </div><!-- Skills -->
 
 
