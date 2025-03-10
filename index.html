@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Sean Anderson Portfolio</title>
     <link rel="stylesheet" href="styles/skills.css">
+    <link rel="stylesheet" href="styles/animations.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -39,10 +40,10 @@
 <div class="hidden lg:flex fixed top-0 w-full h-[12vh] bg-black flex items-center justify-center z-50 shadow-md">
     <nav id="navigation-scrolling" class="flex justify-center">
         <ul class="flex list-none">
-            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#home-screen">Home</a></li>
-            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#projects-screen">Projects</a></li>
-            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#skills-screen">Skills</a></li>
-            <li><a class="text-white text-base px-10 hover:text-teal-700" href="#experience-screen">Experience</a></li>
+            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#home-screen">Home</a></li>
+            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#projects-screen">Projects</a></li>
+            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#skills-screen">Skills</a></li>
+            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#experience-screen">Experience</a></li>
         </ul>
     </nav>
 </div>
@@ -50,16 +51,16 @@
 <!-- Navbar Icons -->
 <div class="hidden lg:flex fixed top-0 right-5 h-[12vh] flex items-center gap-2 z-50">
     <a href="https://www.linkedin.com/in/seananderson92/" target="_blank">
-        <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/linkedin.png" alt="linkedin-link">
+        <img class="imalinks w-10 h-10 rounded-full" src="img/linkedin.png" alt="linkedin-link">
     </a>
     <!-- <a href="https://www.seek.com.au/profile/sean-anderson-Tr33gfDwZF" target="_blank">
         <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/seek.png" alt="seek-link">
     </a> -->
     <a href="https://www.github.com/SuperGoldenMan" target="_blank">
-        <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/github.png" alt="github-link">
+        <img class="imalinks w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/github.png" alt="github-link">
     </a>
     <a href="mailto:seananderson10@hotmail.co.uk">
-        <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/email.png" alt="email-link">
+        <img class="imalinks w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/email.png" alt="email-link">
     </a>
 </div>
 
@@ -437,6 +438,6 @@
 <script src="scripts/scroll.js"></script>
 <script src="scripts/skills.js"></script>
 <script src="scripts/mobile-nav.js"></script>
-
+<script src="scripts/animations.js"></script>
 </body>
 </html>
