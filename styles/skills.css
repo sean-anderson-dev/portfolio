@@ -64,3 +64,25 @@
   .bar.expert::before{
     width: calc(100% - 10px);
   }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  .card::before {
+    background: radial-gradient(
+    300px circle at var(--mouse-x) var(--mouse-y),
+    rgba(0,128,128, 0.5),
+    transparent 40%
+    );
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 500ms;
+  }
