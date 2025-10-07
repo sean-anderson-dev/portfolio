@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  portfolio:
+    image: sean-anderson-portfolio
+    build: .
+    ports:
+      - "80:80"
