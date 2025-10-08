@@ -4,4 +4,4 @@ services:
     image: sean-anderson-portfolio
     build: .
     ports:
-      - "80:80"
+      - "8080:80"
