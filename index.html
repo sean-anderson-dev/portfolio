@@ -23,16 +23,16 @@
 </div>
 
 <!-- Mobile Navigation Menu (Hidden by default) -->
-<div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-black bg-opacity-80 hidden flex flex-col items-center justify-center text-white text-lg z-50">
+<div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-black bg-opacity-90 hidden flex flex-col items-center justify-center text-white text-lg z-50">
     <button id="close-menu" class="absolute top-10 right-5 text-2xl text-teal-400">
         ✖
     </button>
     <nav class="flex flex-col gap-5 text-center">
-        <a class="text-black bg-teal-400" href="#home-screen">Home</a>
-        <a class="text-black bg-teal-400" href="#links-screen">Links</a>
-        <a class="text-black bg-teal-400" href="#projects-screen">Projects</a>
-        <a class="text-black bg-teal-400" href="#skills-screen">Skills</a>
-        <a class="text-black bg-teal-400" href="#experience-screen">Experience</a>
+        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#home-screen">Home</a>
+        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#links-screen">Links</a>
+        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#projects-screen">Projects</a>
+        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#skills-screen">Skills</a>
+        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#experience-screen">Experience</a>
     </nav>
 </div>
 
@@ -93,19 +93,22 @@
 <!-- Links Screen -->
  <div id="links-screen" class="lg:hidden flex flex-col items-center p-5 mb-12 scroll-mt-[12vh]">
     <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Links</h1>
-    <div class="flex flex-col items-center gap-20 w-full">
-        <a href="https://www.linkedin.com/in/seananderson92/" target="_blank" class="flex justify-center items-center gap-2 mt-5 mb-5 bg-white w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
-            <img class="w-10 h-10 rounded-full" src="img/linkedin.png" alt="linkedin-link">
-            <p class="text-center">LinkedIn</p></a>
-        <a href="https://www.github.com/sean-anderson-dev" target="_blank" class="flex justify-center items-center gap-2 mb-5 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
+    <div class="flex flex-col items-center w-full gap-5">
+        <a href="https://www.github.com/sean-anderson-dev" target="_blank" class="flex justify-center items-center gap-2 mt-5 mb-5 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
             <img class="w-10 h-10 rounded-full" src="img/github.png" alt="github-link">
             <p class="text-white">GitHub</p></a>
+        <a href="https://www.linkedin.com/in/seananderson92/" target="_blank" class="flex justify-center items-center gap-2 mb-5 bg-white w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
+            <img class="w-10 h-10 rounded-full" src="img/linkedin.png" alt="linkedin-link">
+            <p class="text-center">LinkedIn</p></a>
+        <a href="https://www.codepen.io/SGM1992/" target="_blank" class="flex justify-center items-center gap-2 mb-5 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
+            <img class="w-10 h-10 rounded-full" src="img/codepen.png" alt="codepen-link">
+            <p class="text-white">Codepen</p></a>
         <a href="mailto:seanaderson10@hotmail.co.uk" class="flex justify-center items-center gap-2 mb-5 bg-white w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
             <img class="w-10 h-10 rounded-full" src="img/email.png" alt="email-link">
             <p>Contact Me</p></a>
         <a href="pdf/sean-anderson-cv.pdf" target="_blank" class="flex justify-center items-center gap-2 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
             <img class="w-10 h-10 rounded-full" src="img/pdf.png" alt="resume-link">
-            <p class="text-white">Download CV</p></a> 
+            <p class="text-white">Download CV</p></a>
     </div>
 </div><!-- Links -->
 
