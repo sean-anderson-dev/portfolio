@@ -1122,3 +1122,22 @@ body:not(.entered) {
   .landing-hint { animation: none; }
   .landing { transition: opacity .3s ease; }
 }
+
+/* ── Mobile base layout (≤768px) ── */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr !important;
+    height: 100dvh;
+  }
+
+  .sidebar { display: none !important; }
+
+  .rail {
+    display: none !important;
+    max-height: 100dvh;
+  }
+
+  .main { scroll-snap-type: y proximity; }
+
+  .panel { min-height: calc(100dvh - 36px - var(--topbar-h)); }
+}
