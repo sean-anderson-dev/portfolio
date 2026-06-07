@@ -1123,11 +1123,19 @@ body:not(.entered) {
   .landing { transition: opacity .3s ease; }
 }
 
-/* ── Mobile base layout (≤768px) ── */
-@media (max-width: 768px) {
+/* ── Mobile base layout (≤1024px) ── */
+/* Mobile nav drawer — hidden on desktop, revealed in the mobile media query */
+.hamburger,
+.drawer,
+.drawer-scrim { display: none; }
+
+@media (max-width: 1024px) {
   .app {
     grid-template-columns: 1fr !important;
     height: 100dvh;
+    padding: 0;
+    gap: 0;
+    background: var(--bg);
   }
 
   .sidebar { display: none !important; }
@@ -1137,7 +1145,198 @@ body:not(.entered) {
     max-height: 100dvh;
   }
 
-  .main { scroll-snap-type: y proximity; }
+  .main {
+    scroll-snap-type: y proximity;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    scroll-padding-top: 0;
+  }
 
-  .panel { min-height: calc(100dvh - 36px - var(--topbar-h)); }
+  .panel { min-height: 100dvh; }
+
+  .hero {
+    font-size: clamp(26px, 7vw, 40px);
+    max-width: none;
+  }
+
+  .panel { padding: 28px 20px; }
+
+  /* Centre the section headings at the top on mobile */
+  .panel-head { justify-content: center; }
+  .eyebrow { text-align: center; }
+
+  .topbar { display: none; }
+
+  .lede { font-size: 14px; }
+
+  /* ── Single-column project & skills layout ── */
+  .projects,
+  .projects.two { grid-template-columns: 1fr; }
+
+  /* General card spacing — full width, vertical stack, no forced height */
+  .card {
+    flex-direction: column;
+    padding: 16px 20px;
+    min-height: 0;
+  }
+
+  /* Personal cards: image on top (full width, ~200px), text below */
+  [data-section="personal"] .card {
+    flex-direction: column-reverse;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  [data-section="personal"] .card-aside { flex: none; }
+
+  [data-section="personal"] .card-icon { display: none; }
+
+  [data-section="personal"] .card-shot {
+    flex: none;
+    height: 200px;
+  }
+
+  /* Skills: single column, full-width bars */
+  .skills { grid-template-columns: 1fr; }
+
+  /* ── Experience: tap-to-expand accordion ── */
+  /* Single column — date stacks above title, full width */
+  .xp-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    position: relative;
+  }
+
+  .xp-org { margin-bottom: 0; }
+
+  /* Tappable + chevron only on rows that actually have bullets */
+  .xp-row:has(.xp-bullets) { cursor: pointer; }
+
+  .xp-row:has(.xp-bullets)::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--muted);
+    border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg);
+    transition: transform .25s ease;
+  }
+
+  .xp-row.is-open::after { transform: rotate(-135deg); }
+
+  /* Collapsed by default; revealed with a smooth height transition on open */
+  .xp-bullets {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .3s ease, opacity .25s ease, margin-top .3s ease;
+  }
+
+  .xp-row.is-open .xp-bullets {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    position: fixed;
+    top: 11px;
+    left: 12px;
+    z-index: 30;
+    width: 38px;
+    height: 34px;
+    padding: 0 8px;
+    border-radius: var(--radius-sm);
+    background: var(--panel);
+    border: 1px solid var(--line-strong);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    background: var(--ink);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.is-open span:nth-child(2) { opacity: 0; }
+  .hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* Semi-transparent dark overlay behind the floating drawer card */
+  .drawer-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .drawer-scrim.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Floating card overlay, anchored top-left below the hamburger */
+  .drawer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 54px;
+    left: 12px;
+    z-index: 50;
+    width: calc(100% - 80px);
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transform-origin: top left;
+    transform: scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .drawer.is-open {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .drawer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+
+  .drawer-link + .drawer-link {
+    border-top: 1px solid var(--line);
+  }
+
+  .drawer-link.active {
+    background: var(--accent-bg);
+    color: var(--accent);
+  }
 }
