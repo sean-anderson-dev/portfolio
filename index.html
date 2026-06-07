@@ -1,490 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Sean Anderson Portfolio</title>
-    <link rel="stylesheet" href="styles/skills.css">
-    <link rel="stylesheet" href="styles/animations.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sean Anderson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="font-sans box-border pt-12 overflow-auto">
+<body>
 
-<!-- Mobile Navbar -->
-<div class="lg:hidden fixed top-0 w-full h-[12vh] bg-black flex items-center px-5 z-50 shadow-md">
-    <!-- Hamburger Menu Icon -->
-    <button id="mobile-menu-button" class="text-white text-2xl focus:outline-none">
-        ☰
+<!-- ============ LANDING ============ -->
+<div id="landing" class="landing" aria-label="Welcome">
+  <div class="landing-float">
+    <div class="landing-ground"></div>
+    <button class="landing-disc" id="landing-disc" aria-label="Enter portfolio">
+      <span class="landing-seat">
+        <img src="img/beach.jpg" alt="Beach Profile" />
+      </span>
     </button>
-    <div class="flex ml-auto md:mr-auto">
-        <span class="text-white text-lg md:text-2xl font-semibold tracking-wide">Portfolio</span>
-    </div>    
+    <span class="landing-handle"><span class="accent">@</span>seananderson<span class="accent">dev</span></span>
+  </div>
+  <div class="landing-hint" aria-hidden="true">
+    <span>click or scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
 </div>
 
-<!-- Mobile Navigation Menu (Hidden by default) -->
-<div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-black bg-opacity-90 hidden flex flex-col items-center justify-center text-white text-lg z-50">
-    <button id="close-menu" class="absolute top-10 right-5 text-2xl text-teal-400">
-        ✖
-    </button>
-    <nav class="flex flex-col gap-5 text-center">
-        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#home-screen">Home</a>
-        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#links-screen">Links</a>
-        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#projects-screen">Projects</a>
-        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#skills-screen">Skills</a>
-        <a class="nav-button text-black bg-teal-400 rounded-lg pr-1 pl-1 [&.active]:bg-white [&.active]:text-black transition-colors duration-300" href="#experience-screen">Experience</a>
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="avatar"></div>
+      <div class="brand-meta">
+        <div class="name">Sean Anderson</div>
+        <div class="role">Automation & AI Engineer</div>
+        <div class="org">Scottish Parliament</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a class="active" data-nav data-target="about">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+        About
+      </a>
+      <a data-nav data-target="professional">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
+        Professional Projects
+        <span class="kbd" data-count="professional"></span>
+      </a>
+      <a data-nav data-target="personal">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        Personal Projects
+        <span class="kbd" data-count="personal"></span>
+      </a>
+      <a data-nav data-target="skills">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 20l4-4M20 4l-4 4M14 4l6 6M4 14l6 6"/></svg></span>
+        Skills
+      </a>
+      <a data-nav data-target="experience">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/></svg></span>
+        Experience
+      </a>
     </nav>
+
+    <div class="sidebar-foot">
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/seananderson92/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zM8 8h4.37v1.91h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v7.47h-4.56V15.5c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.74 1.86-2.74 3.78V22H8V8z"/></svg>
+        </a>
+        <a href="https://www.github.com/sean-anderson-dev" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3"/></svg>
+        </a>
+        <a href="https://www.codepen.io/SGM1992/" target="_blank" rel="noopener noreferrer" title="CodePen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/><polyline points="2 15.5 12 8.5 22 15.5"/><line x1="12" y1="2" x2="12" y2="8.5"/></svg>
+        </a>
+        <a href="mailto:seananderson10@hotmail.co.uk" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main" id="scroller">
+    <div class="topbar">
+      <div class="crumb">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+        Portfolio <span class="crumb-sep">/</span> <strong id="crumb-section">About</strong>
+      </div>
+      <div class="pager">
+        <span class="num" id="pager-num">01</span>
+        <span class="crumb-sep">/</span>
+        <span>05</span>
+        <span class="bar"><i id="pager-bar"></i></span>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="panel" data-section="about" data-screen-label="01 About">
+      <div class="panel-head">
+        <div class="eyebrow">About</div>
+      </div>
+      <div class="panel-body">
+        <h1 class="hero">I build automation systems and <span class="accent">AI agents</span> that make <span class="accent">your business</span> easier to run.</h1>
+        <p class="lede"><strong>Analyst Developer at the Scottish Parliament</strong>, specialising in Power Platform, Copilot Studio, and PowerShell. I turn big ideas and repetitive tasks into effecient solutions.</p>
+        <div class="cta-row">
+          <a href="/pdf/sean-anderson-cv.pdf" download class="btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <a href="mailto:seananderson10@hotmail.co.uk" class="btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+            Get in touch
+          </a>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <span></span>
+        <a class="nextlink" data-jump="professional">
+          Professional projects
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Professional Projects -->
+    <section class="panel" data-section="professional" data-screen-label="02 Professional Projects">
+      <div class="panel-head">
+        <div class="eyebrow">Professional Projects</div>
+      </div>
+      <div class="panel-body">
+        <div class="projects">
+          <article class="card">
+            <div class="crown">
+              <span class="card-org">Scottish Parliament · <span class="tool">Copilot Studio</span></span>
+            </div>
+            <h3>Digital Guidance Agent</h3>
+            <div class="sub">Onboarding copilot for new parliamentary members</div>
+            <p>Designed and built a Copilot Studio agent to handle digital services queries for new members and their staff. Audited and restructured knowledge sources via PowerShell and regex, then layered topic disambiguation, response guardrails, and fallback signposting on top.</p>
+            <div class="tags">
+              <span class="tag">Copilot Studio</span>
+              <span class="tag">PowerShell</span>
+              <span class="tag">SharePoint</span>
+              <span class="tag alt">Prompt Eng.</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="crown">
+              <span class="card-org">Scottish Parliament · <span class="tool">Power Automate</span></span>
+            </div>
+            <h3>IT Approvals Pipeline</h3>
+            <div class="sub">End-to-end approval flow with audit trail</div>
+            <p>Replaced a deprecated approvals process with a Power Automate pipeline covering request capture, multi-stage approvals, asset reconciliation, and Teams notifications. Wrote the spec from scratch by interviewing the stakeholders nobody had asked.</p>
+            <div class="tags">
+              <span class="tag">Power Automate</span>
+              <span class="tag">Adaptive Cards</span>
+              <span class="tag">SharePoint</span>
+              <span class="tag alt">Teams</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="crown">
+              <span class="card-org">Dundee City Council · <span class="tool">Linux / Virtualisation</span></span>
+            </div>
+            <h3>Linux Server Migration</h3>
+            <div class="sub">Legacy mainframe infrastructure to VMs</div>
+            <p>Migrated legacy mainframe infrastructure to Linux servers on virtual machines. Planned the migration to minimise downtime, upgraded legacy applications, and developed replacement systems where existing software could not be carried over.</p>
+            <div class="tags">
+              <span class="tag">Linux</span>
+              <span class="tag">Virtualisation</span>
+              <span class="tag">PHP</span>
+              <span class="tag alt">Infrastructure</span>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <span>3 featured, more on request.</span>
+        <a class="nextlink" data-jump="personal">
+          Personal projects
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Personal Projects -->
+    <section class="panel" data-section="personal" data-screen-label="03 Personal Projects">
+      <div class="panel-head">
+        <div class="eyebrow">Personal Projects</div>
+      </div>
+      <div class="panel-body">
+        <div class="projects two">
+          <a class="card" href="https://sean-anderson-dev.github.io/pistons-fansite/" target="_blank" rel="noopener noreferrer">
+            <div class="card-content">
+              <div class="crown">
+                <span class="card-org">Side project · <span class="tool">NBA / Python</span></span>
+              </div>
+              <h3>Detroit Pistons Fansite</h3>
+              <div class="sub">Live NBA data with automated updates</div>
+              <p>Fan site built around live NBA data. Python scripts and GitHub Actions handle automated updates and free-tier API rate limiting. A personal project — built because I wanted to, which is usually how the best ones start.</p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag alt">JavaScript</span>
+              </div>
+            </div>
+            <div class="card-aside">
+              <span class="card-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="M12 3q-9 9 0 18"/><path d="M12 3q9 9 0 18"/></svg>
+              </span>
+              <div class="card-shot">
+                <img src="img/pistons-preview.jpg" alt="Detroit Pistons Fansite screenshot" loading="lazy">
+              </div>
+            </div>
+          </a>
+
+          <a class="card" href="https://sean-anderson-dev.github.io/rachael-smith/" target="_blank" rel="noopener noreferrer">
+            <div class="card-content">
+              <div class="crown">
+                <span class="card-org">Side project · <span class="tool">HTML / CSS / JS</span></span>
+              </div>
+              <h3>Artist Portfolio</h3>
+              <div class="sub">Clean, image-led layout for a local artist</div>
+              <p>Portfolio site built for a local artist. Clean, image-led layout designed to let the work speak for itself. No frameworks, no fuss.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag alt">No framework</span>
+              </div>
+            </div>
+            <div class="card-aside">
+              <span class="card-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21v-4a4 4 0 1 1 4 4h-4"/><path d="M21 3a16 16 0 0 0 -12.8 10.2"/><path d="M21 3a16 16 0 0 1 -10.2 12.8"/><path d="M10.6 9a9 9 0 0 1 4.4 4.4"/></svg>
+              </span>
+              <div class="card-shot">
+                <img src="img/artist-preview.jpg" alt="Artist Portfolio screenshot" loading="lazy">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <span>Basketball, coffee, and passion projects.</span>
+        <a class="nextlink" data-jump="skills">
+          Skills
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="panel" data-section="skills" data-screen-label="04 Skills">
+      <div class="panel-head">
+        <div class="eyebrow">Skills</div>
+      </div>
+      <div class="panel-body">
+        <p class="lede skills-lede">The toolbox, ranked by how often I actually reach for it during the week.</p>
+        <div class="skills">
+          <div class="skill"><span class="pip"></span>Power Automate <span class="lvl">expert</span></div>
+          <div class="skill"><span class="pip"></span>Copilot Studio <span class="lvl">advanced</span></div>
+          <div class="skill"><span class="pip"></span>PowerShell <span class="lvl">advanced</span></div>
+          <div class="skill"><span class="pip"></span>SharePoint <span class="lvl">advanced</span></div>
+          <div class="skill"><span class="pip"></span>Prompt Engineering <span class="lvl">advanced</span></div>
+          <div class="skill"><span class="pip"></span>HTML / CSS <span class="lvl">advanced</span></div>
+          <div class="skill"><span class="pip"></span>Power Apps <span class="lvl">professional</span></div>
+          <div class="skill"><span class="pip"></span>JavaScript <span class="lvl">professional</span></div>
+          <div class="skill"><span class="pip"></span>Linux <span class="lvl">professional</span></div>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <span>There are more tools found underneath the daily drivers.</span>
+        <a class="nextlink" data-jump="experience">
+          Experience
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="panel" data-section="experience" data-screen-label="05 Experience">
+      <div class="panel-head">
+        <div class="eyebrow">Experience</div>
+      </div>
+      <div class="panel-body">
+        <div class="xp">
+          <div class="xp-row current">
+            <div class="xp-when">Jun 2024 — Now</div>
+            <div>
+              <div class="xp-role">Analyst Developer</div>
+              <div class="xp-org">Scottish Parliament · M365 Applications, Edinburgh</div>
+              <ul class="xp-bullets">
+                <li>Embedded in the M365 Applications team; shipped the Digital Guidance Agent and IT Approvals Pipeline.</li>
+                <li>Promoted within first six months.</li>
+                <li>Lead on Copilot Studio adoption: prompt design, guardrails, knowledge-source restructuring.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp-row">
+            <div class="xp-when">2022 — 2024</div>
+            <div>
+              <div class="xp-role">Assistant IT Officer</div>
+              <div class="xp-org">Dundee City Council</div>
+              <ul class="xp-bullets">
+                <li>PHP development and migration, Linux system management, network administration.</li>
+                <li>Owned a portfolio of Power Automate flows replacing manual back-office processes.</li>
+                <li>Built PowerShell tooling for asset reconciliation across SharePoint and Active Directory.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp-row">
+            <div class="xp-when">Up to 2022</div>
+            <div>
+              <div class="xp-role">Customer Service, Design and Tesing Roles</div>
+              <div class="xp-org">Different Sectors</div>
+              <ul class="xp-bullets">
+                <li>Vast experience in public facing customer service roles.</li>
+                <li>Designed high-end personalised kitchens on CAD based software.</li>
+                <li>Testing and Quality Assurance roles.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp-row">
+            <div class="xp-when">Graduated 2015</div>
+            <div>
+              <div class="xp-role">BSc Web Design &amp; Development</div>
+              <div class="xp-org">Abertay University, Dundee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <span>CV available to download from the About page and sidebar.</span>
+        <a class="nextlink" data-jump="about">
+          Back to top
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ RIGHT RAIL ============ -->
+  <aside class="rail">
+    <div class="rail-card">
+      <h4>Experience</h4>
+      <div class="timeline">
+        <div class="tl">
+          <div class="tl-rail"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <div class="tl-when">2024 — Now</div>
+            <div class="tl-role">Analyst Developer</div>
+            <div class="tl-org">Scottish Parliament</div>
+          </div>
+        </div>
+        <div class="tl">
+          <div class="tl-rail"><div class="tl-dot muted"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <div class="tl-when">2022 — 2024</div>
+            <div class="tl-role">Assistant IT Officer</div>
+            <div class="tl-org">Dundee City Council</div>
+          </div>
+        </div>
+        <div class="tl">
+          <div class="tl-rail"><div class="tl-dot muted"></div></div>
+          <div class="tl-body">
+            <div class="tl-when">Graduated 2015</div>
+            <div class="tl-role">BSc Web Design &amp; Dev</div>
+            <div class="tl-org">Abertay University</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail-card">
+      <h4>Top stack</h4>
+      <div class="stack">
+        <div class="stack-row"><span class="name">Power Automate</span><span class="bar"><i style="width:96%"></i></span></div>
+        <div class="stack-row"><span class="name">Prompt Engineering</span><span class="bar"><i style="width:90%"></i></span></div>
+        <div class="stack-row"><span class="name">PowerShell</span><span class="bar"><i style="width:90%"></i></span></div>
+        <div class="stack-row"><span class="name">SharePoint</span><span class="bar"><i style="width:90%"></i></span></div>
+        <div class="stack-row"><span class="name">Copilot Studio</span><span class="bar"><i style="width:80%"></i></span></div>
+      </div>
+    </div>
+
+    <div class="rail-card cv-card">
+      <h4>CV <button type="button" class="more" data-cv-open>preview →</button></h4>
+      <a class="cv-preview" href="/pdf/sean-anderson-cv.pdf" download title="Download CV">
+        <div class="cv-doc">
+          <div class="cv-name">Sean Anderson</div>
+          <div class="cv-role-line">Automation &amp; AI Engineer</div>
+          <img class="cv-image" src="img/resume.jpg" alt="Preview of Sean Anderson's CV" loading="lazy">
+        </div>
+        <div class="cv-overlay">
+          <span class="pill">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </span>
+        </div>
+      </a>
+      <div class="cv-meta">
+        <span class="filename">sean-anderson-cv.pdf</span>
+        <a href="/pdf/sean-anderson-cv.pdf" download class="download">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+  </aside>
+
 </div>
 
-<!-- Navbar -->
-<div class="hidden lg:flex fixed top-0 w-full h-[12vh] bg-black flex items-center justify-center z-50 shadow-md">
-    <nav id="navigation-scrolling" class="flex justify-center">
-        <ul class="flex list-none">
-            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#home-screen">Home</a></li>
-            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#projects-screen">Projects</a></li>
-            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#skills-screen">Skills</a></li>
-            <li class="hover:animate-pulse hover:scale-110"><a class="text-white text-base px-10 hover:text-teal-700" href="#experience-screen">Experience</a></li>
-        </ul>
-    </nav>
+<div class="cv-lightbox" id="cv-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="CV preview">
+  <button type="button" class="cv-lightbox-close" data-cv-close aria-label="Close preview">&times;</button>
+  <img class="cv-lightbox-img" src="img/resume.jpg" alt="Full CV for Sean Anderson">
 </div>
 
-<!-- Navbar Icons -->
-<div class="hidden lg:flex fixed top-0 right-5 h-[12vh] flex items-center gap-2 z-50">
-    <a href="https://www.linkedin.com/in/seananderson92/" target="_blank">
-        <img class="imalinks w-10 h-10 rounded-full" src="img/linkedin.png" alt="linkedin-link">
-    </a>
-    <!-- <a href="https://www.seek.com.au/profile/sean-anderson-Tr33gfDwZF" target="_blank">
-        <img class="w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/seek.png" alt="seek-link">
-    </a> -->
-    <a href="https://www.github.com/sean-anderson-dev" target="_blank">
-        <img class="imalinks w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/github.png" alt="github-link">
-    </a>
-    <a href="https://www.codepen.io/SGM1992/" target="_blank">
-        <img class="imalinks w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/codepen.png" alt="codepen-link">
-    </a>
-    <a href="mailto:seananderson10@hotmail.co.uk">
-        <img class="imalinks w-10 h-10 rounded-full hover:scale-110 transition-transform" src="img/email.png" alt="email-link">
-    </a>
-</div>
-
-<!-- Home Screen -->
-<div id="home-screen" class="min-h-[calc(100vh-12vh)] flex items-center justify-center p-5 mt-[5vh] scroll-mt-[5vh] lg:mt-[12vh] lg:scroll-mt-[12vh]">
-    <div class="flex w-full max-w-6xl items-center justify-center gap-10">
-        <!-- Left Column -->
-        <div id="left-column" class="w-full lg:w-1/2 flex flex-col justify-center items-center text-center">
-            <h1 class="text-3xl font-bold mb-2">Sean Anderson</h1>
-            <h2 class="font-light text-xl">Software Developer</h2>
-            <h3 class="italic underline text-lg my-2 text-teal-700">BSc Web Design & Development</h3>
-            <div id="summary" class="flex justify-center">
-                <div class="shadow-md shadow-teal-700 rounded-lg p-5 bg-white my-5 max-w-lg">
-                    <p>A resourceful and practical Professional Designer driven to personally achieve while helping my team to succeed. Abertay University Graduate with Professional Software Development Experience working in Local Government for multiple years.</p>
-                </div>
-            </div>
-            <img class="lg:hidden rounded-full w-100 h-100 object-cover border-2 border-gray-300" src="img/portrait.png" alt="Portrait of Sean Anderson">
-        </div>
-
-        <!-- Right Column -->
-        <div id="right-column" class="hidden lg:flex w-1/2 flex justify-center items-center">
-            <img id="floating-portrait" class="sticky top-24 w-3/4 h-3/4 object-contain rounded-full mx-auto pt-5 shadow-md shadow-teal-700 bg-[url(img/tealbackground3.jpg)] bg-fixed bg-cover bg-center bg-no-repeat items-center justify-center" src="img/profile.png" alt="Transparent Portrait of Sean Anderson">
-        </div>
-    </div>
-</div><!-- Home -->
-
-<!-- Links Screen -->
- <div id="links-screen" class="lg:hidden flex flex-col items-center p-5 mb-12 scroll-mt-[12vh]">
-    <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Links</h1>
-    <div class="flex flex-col items-center w-full gap-5">
-        <a href="https://www.github.com/sean-anderson-dev" target="_blank" class="flex justify-center items-center gap-2 mt-5 mb-5 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
-            <img class="w-10 h-10 rounded-full" src="img/github.png" alt="github-link">
-            <p class="text-white">GitHub</p></a>
-        <a href="https://www.linkedin.com/in/seananderson92/" target="_blank" class="flex justify-center items-center gap-2 mb-5 bg-white w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
-            <img class="w-10 h-10 rounded-full" src="img/linkedin.png" alt="linkedin-link">
-            <p class="text-center">LinkedIn</p></a>
-        <a href="https://www.codepen.io/SGM1992/" target="_blank" class="flex justify-center items-center gap-2 mb-5 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
-            <img class="w-10 h-10 rounded-full" src="img/codepen.png" alt="codepen-link">
-            <p class="text-white">Codepen</p></a>
-        <a href="mailto:seanaderson10@hotmail.co.uk" class="flex justify-center items-center gap-2 mb-5 bg-white w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
-            <img class="w-10 h-10 rounded-full" src="img/email.png" alt="email-link">
-            <p>Contact Me</p></a>
-        <a href="pdf/sean-anderson-cv.pdf" target="_blank" class="flex justify-center items-center gap-2 bg-black w-3/4 md:w-1/2 shadow-md shadow-teal-700 p-5 rounded-lg">
-            <img class="w-10 h-10 rounded-full" src="img/pdf.png" alt="resume-link">
-            <p class="text-white">Download CV</p></a>
-    </div>
-</div><!-- Links -->
-
-<!-- Projects Screen -->
-<div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="projects-screen">
-    <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Projects</h1>
-<!-- List of Projects -->
-    <ul class="group/list mt-5">
-        <!-- Pistons Fansite-->
-        <li class="mb-12">
-            <!-- Mobile Projects -->
-             <div class="lg:hidden">
-                <h3 class="text-center text-2xl font-bold pb-2">My Detroit Pistons Fansite</h3>
-                <ul class="flex justify-center pb-2" aria-label="Technologies used:">
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">HTML5</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">CSS3</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Javascript</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">NBA API</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Python</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Github Actions</div></li>
-                </ul>
-                <a href="https://sean-anderson-dev.github.io/pistons-fansite/" target="_blank" rel="noreferrer noopener" aria-label="pistons-fansite">
-                    <img alt="Detroit Pistons Preview" loading="lazy" w-full class="object-cover" style="color:transparent" src="img/pistons-preview.jpg">
-                    </a>
-            </div><!-- End of Mobile P's -->
-            <!-- Desktop Projects -->
-            <div class="hidden lg:flex group relative grid gap-4 pb-1 pl-10 lg:pl-0 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50  ">
-                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-black lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
-                </div>
-                <div class="z-10 sm:order-2 sm:col-span-6">
-                    <h3>
-                        <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://sean-anderson-dev.github.io/pistons-fansite/" target="_blank" rel="noreferrer noopener" aria-label="pistons-fansite">
-                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                            <span>My Detroit Pistons<!-- --> <span class="inline-block">Fansite<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span>
-                        </a> 
-                    </h3>
-                    <p class="hidden lg:flex mt-2 text-sm leading-normal group-hover:text-white">
-                        Personal project to showcase my skills in HTML, CSS, and JavaScript. The site is a fan page for the Detroit Pistons NBA team which also utilises Python scripts and Github Actions for automation and limiting usage of free APIS.
-                    </p>
-                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">HTML5</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">CSS3</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">Javascript</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">NBA API</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">Python</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">Github Actions</div></li>              
-                    </ul>
-                </div>
-                <img alt="Detroit Pistons Preview" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition sm:order-1 sm:col-span-2 sm:translate-y-1 group-hover:border-teal-700 group-hover:animate-pulse" style="color:transparent" src="img/pistons-preview.jpg">
-            </div><!-- End of Desktop P's -->
-        </li>
-
-        <!-- PyGame Asteroids -->
-        <li class="mb-12">
-            <!-- Mobile Projects -->
-             <div class="lg:hidden">
-                <h3 class="text-center text-2xl font-bold pb-2">Asteroids</h3>
-                <ul class="flex justify-center pb-2" aria-label="Technologies used:">
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Python</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Pygame</div></li>                   
-                </ul>
-                <a href="https://github.com/sean-anderson-dev/asteroids/" target="_blank" rel="noreferrer noopener" aria-label="asteroids">
-                    <img alt="Asteroids Game Preview" loading="lazy" w-full class="object-cover" style="color:transparent" src="img/asteroids.png">
-                    </a>
-            </div><!-- End of Mobile P's -->
-            <!-- Desktop Projects -->
-            <div class="hidden lg:flex group relative grid gap-4 pb-1 pl-10 lg:pl-0 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-black lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
-                </div>
-                <div class="z-10 sm:order-2 sm:col-span-6">
-                    <h3>
-                        <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://sean-anderson-dev.github.io/asteroids/build/web/index.html" target="_blank" rel="noreferrer noopener" aria-label="asteroids">
-                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                            <span>Asteroids<!-- --> <span class="inline-block">Game<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span>
-                        </a> 
-                    </h3>
-                    <p class="hidden lg:flex mt-2 text-sm leading-normal group-hover:text-white">
-                        Personal project creating the classic Asteroids in Pygame. Can be played through this link or downloaded from my github, requires Python3 and Pygame to run if downloaded locally.
-                    </p>
-                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">Python</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">Pygame</div></li>                    
-                    </ul>
-                </div>
-                <img alt="Asteroids Game Preview" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition sm:order-1 sm:col-span-2 sm:translate-y-1 group-hover:border-teal-700 group-hover:animate-pulse " style="color:transparent" src="img/asteroids.png">
-            </div><!-- End of Desktop P's -->
-        </li>
-
-        <!-- Artist Folio-->
-        <li class="mb-12">
-            <!-- Mobile Projects -->
-             <div class="lg:hidden">
-                <h3 class="text-center text-2xl font-bold pb-2">Artist Portfolio</h3>
-                <ul class="flex justify-center pb-2" aria-label="Technologies used:">
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">HTML5</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">CSS3</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">JavaScript</div></li>                  
-                </ul>
-                <a href="https://sean-anderson-dev.github.io/rachael-smith/" target="_blank" rel="noreferrer noopener" aria-label="artist-folio">
-                    <img alt="Artist Folio Preview" loading="lazy" w-full class="object-cover" style="color:transparent" src="img/artist-preview.jpg">
-                    </a>
-            </div><!-- End of Mobile P's -->
-            <!-- Desktop Projects -->
-            <div class="hidden lg:flex group relative grid gap-4 pb-1 pl-10 lg:pl-0 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-black lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
-                </div>
-                <div class="z-10 sm:order-2 sm:col-span-6">
-                    <h3>
-                        <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://sean-anderson-dev.github.io/rachael-smith/" target="_blank" rel="noreferrer noopener" aria-label="pistons-fansite">
-                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                            <span>Artist<!-- --> <span class="inline-block">Portfolio<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span>
-                        </a> 
-                    </h3>
-                    <p class="hidden lg:flex mt-2 text-sm leading-normal group-hover:text-white">
-                        Portfolio website for an artist showing artwork and travel sketches written from scratch in HTML, CSS, and JavaScript. Updates to come.
-                    </p>
-                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">HTML5</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">CSS3</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">JavaScript</div></li>                   
-                    </ul>
-                </div>
-                <img alt="Artist Folio Preview" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition sm:order-1 sm:col-span-2 sm:translate-y-1 group-hover:border-teal-700 group-hover:animate-pulse " style="color:transparent" src="img/artist-preview.jpg">
-            </div><!-- End of Desktop P's -->
-        </li>
-
-        <!-- React TodoList -->
-        <li class="mb-12">
-            <!-- Mobile Projects -->
-             <div class="lg:hidden">
-                <h3 class="text-center text-2xl font-bold pb-2">React To Do List App</h3>
-                <ul class="flex justify-center pb-2" aria-label="Technologies used:">
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">React</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">CSS</div></li>                   
-                </ul>
-                <a href="https://github.com/sean-anderson-dev/todolist/" target="_blank" rel="noreferrer noopener" aria-label="todolist">
-                    <img alt="To Do List App Preview" loading="lazy" w-full class="object-cover" style="color:transparent" src="img/todolist.jpg">
-                    </a>
-            </div><!-- End of Mobile P's -->
-            <!-- Desktop Projects -->
-            <div class="hidden lg:flex group relative grid gap-4 pb-1 pl-10 lg:pl-0 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-black lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
-                </div>
-                <div class="z-10 sm:order-2 sm:col-span-6">
-                    <h3>
-                        <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://github.com/sean-anderson-dev/todolist/" target="_blank" rel="noreferrer noopener" aria-label="todolist">
-                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                            <span>To Do List<!-- --> <span class="inline-block">App<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span>
-                        </a> 
-                    </h3>
-                    <p class="hidden lg:flex mt-2 text-sm leading-normal group-hover:text-white">
-                        Personal project to create a To Do List App using React.
-                    </p>
-                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">React</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">CSS3</div></li>                    
-                    </ul>
-                </div>
-                <img alt="To Do List App Preview" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition sm:order-1 sm:col-span-2 sm:translate-y-1 group-hover:border-teal-700 group-hover:animate-pulse " style="color:transparent" src="img/todolist.jpg">
-            </div><!-- End of Desktop P's -->
-        </li>
-
-        <!-- Messenger App -->
-        <li class="mb-12">
-            <!-- Mobile Projects -->
-             <div class="lg:hidden">
-                <h3 class="text-center text-2xl font-bold pb-2">Node Messenger App</h3>
-                <ul class="flex justify-center pb-2" aria-label="Technologies used:">
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Node.js</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">Bootstrap</div></li>
-                    <li class="mr-1.5"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">MongoDB</div></li>
-                </ul>
-                <a href="https://github.com/sean-anderson-dev/messenger/" target="_blank" rel="noreferrer noopener" aria-label="messenger">
-                    <img alt="To Do List App Preview" loading="lazy" w-full class="object-cover" style="color:transparent" src="img/messenger-preview.jpg">
-                    </a>
-            </div><!-- End of Mobile P's -->
-            <!-- Desktop Projects -->
-            <div class="hidden lg:flex group relative grid gap-4 pb-1 pl-10 lg:pl-0 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-black lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
-                </div>
-                <div class="z-10 sm:order-2 sm:col-span-6">
-                    <h3>
-                        <a class="inline-flex items-baseline text-3xl text-black hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://github.com/sean-anderson-dev/messenger/" target="_blank" rel="noreferrer noopener" aria-label="messenger">
-                            <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                            <span>Messenger<!-- --> <span class="inline-block">App<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span>
-                        </a> 
-                    </h3>
-                    <p class="hidden lg:flex mt-2 text-sm leading-normal group-hover:text-white">
-                        Personal project to create a Messenger App using Node.js.
-                    </p>
-                    <ul class="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">Node.js</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">Bootstrap</div></li>
-                        <li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-black  px-3 py-1 text-xs font-medium leading-5 text-teal-300 group-hover:animate-bounce">MongoDB</div></li>                                        
-                    </ul>
-                </div>
-                <img alt="To Do List App Preview" loading="lazy" width="200" height="48" decoding="async" data-nimg="1" class="aspect-video object-cover rounded border-2 border-slate-200/10 transition sm:order-1 sm:col-span-2 sm:translate-y-1 group-hover:border-teal-700 group-hover:animate-pulse " style="color:transparent" src="img/messenger-preview.jpg">
-            </div><!-- End of Desktop P's -->
-        </li>
-        
-        <!-- ADD AS WE CREATE   -->
-    </ul>
-</div><!-- Projects -->
-
-
-
-<!-- Skills Screen -->
-<div class="lg:min-h-[calc(100vh-12vh)] flex flex-col items-center px-10 py-5 scroll-mt-[12vh] mb-12" id="skills-screen">
-    <h1 id="screen-title" class="text-center text-3xl font-bold mb-10 lg:mb-0">Skills</h1>
-    <h2 class="hidden lg:flex text-center text-xl font-medium mb-10">Click a card to display Skills</h2>
-    <h2 class="flex lg:hidden text-center text-xl font-medium mb-10">Click cards to reveal skills, scroll for more cards</h2>
-<!-- Mobile -->
-    <div class="lg:hidden w-3/4 md:w-3/5 max-w-6xl overflow-x-scroll flex snap-x snap-mandatory shadow-md shadow-teal-700">
-        <!-- Skill Card -->
-        <div class="card relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center"
-        data-skill="frontend">
-    
-            <!-- Front Side -->
-            <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <img class="w-full h-full object-cover" src="img/front-end.jpeg" alt="Front-End-Development">
-            </div>
-        
-        
-            
-        </div><!-- Skill Card -->
-        
-
-        <!-- Skill Card -->
-        <div class="card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center"
-        data-skill="backend">
-    
-            <!-- Front Side -->
-            <div class="absolute inset-0 flex flex-col justify-center items-center">
-                <img class="w-full h-full object-cover" src="img/back-end.jpeg" alt="Back-End-Development">
-            </div>
-        
-    
-            
-        </div><!-- Skill Card -->
-        
-
-        <!-- Skill Card -->
-        <div class="card card-header relative w-full shrink-0 h-[350px] rounded-lg shadow-md bg-white overflow-hidden snap-center"
-        data-skill="customer">
-    
-            <!-- Front Side -->
-            <div class="front absolute inset-0 flex flex-col justify-center items-center">
-                <img class="w-full h-full object-cover" src="img/customer-service.jpeg" alt="Customer-Service">
-            </div>
-        
-        </div><!-- Skill Card -->
-        
-    </div>
-<!-- End of Mobile-->
-<!-- Desktop -->
-    <div class="hidden lg:flex grid-cols-3 gap-8 w-full max-w-6xl">
-        <!-- Skill Card -->
-        <div class="card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl hover:cursor-pointer transition-transform bg-white overflow-hidden"
-        data-skill="frontend">
-    
-            <!-- Front Side -->
-            <div class="absolute inset-0 flex flex-col justify-center items-center">
-                <img class="w-full h-full object-cover" src="img/front-end.jpeg" alt="Front-End-Development">
-            </div>
-        </div><!-- Skill Card -->
-        
-
-        <!-- Skill Card -->
-        <div class="card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl hover:cursor-pointer transition-transform bg-white overflow-hidden"
-        data-skill="backend">
-    
-            <!-- Front Side -->
-            <div class="absolute inset-0 flex flex-col justify-center items-center">
-                <img class="w-full h-full object-cover" src="img/back-end.jpeg" alt="Back-End-Development">
-            </div>
-        </div><!-- Skill Card -->
-        
-
-        <!-- Skill Card -->
-        <div class="card relative w-full h-[350px] rounded-lg shadow-md hover:shadow-teal-700 hover:shadow-xl hover:cursor-pointer transition-transform bg-white overflow-hidden"
-        data-skill="customer">
-            <!-- Front Side -->
-            <div class="absolute inset-0 flex flex-col justify-center items-center">
-                <img class="w-full h-full object-cover" src="img/customer-service.jpeg" alt="Customer-Service">
-            </div>
-        </div><!-- Skill Card -->
-        
-    </div>
-
-    <div id="frontend" class="container hidden">
-        <h1 class="justify-center text-center p-5 text-xl">Front-End Development</h1>
-        <div class="bar expert" data-skill="HTML5"></div>
-        <div class="bar advanced" data-skill="CSS3"></div>
-        <div class="bar intermediate" data-skill="JavaScript"></div>
-        <div class="bar intermediate" data-skill="jQuery"></div>
-        <div class="bar basic" data-skill="Tailwind CSS"></div>
-        <div class="bar basic" data-skill="React"></div>   
-    </div>
-
-    <div id="backend" class="container hidden">
-        <h1 class="justify-center text-center p-5 text-xl">Back-End-Development</h1>
-        <div class="bar expert" data-skill="PHP"></div>
-        <div class="bar advanced" data-skill="Linux"></div>
-        <div class="bar advanced" data-skill="Python"></div>
-        <div class="bar intermediate" data-skill="Node.js"></div>
-        <div class="bar intermediate" data-skill="SQL"></div>
-        <div class="bar intermediate" data-skill="Git"></div>
-    </div>
-
-    <div id="customer" class="container hidden">
-        <h1 class="justify-center text-center p-5 text-xl">Customer Service</h1>
-        <div class="bar expert" data-skill="Experience"></div>
-        <div class="bar expert" data-skill="Communication"></div>
-        <div class="bar expert" data-skill="Clarity"></div>
-        <div class="bar expert" data-skill="Patience"></div>
-    </div>
-</div><!-- Skills -->
-
-
-<!-- Experience Screen -->
-<div class="min-h-[calc(100vh-12vh)] flex flex-col items-center p-5 scroll-mt-[12vh]" id="experience-screen">
-    <h1 id="screen-title" class="text-center text-3xl font-bold mb-5">Experience</h1>
-
-    <div class="flex flex-col md:flex-row items-center md:items-start w-full max-w-6xl gap-10">
-        <!-- Left Side (Resume Image) -->
-        <div class="hidden mt-20 lg:mt-0 md:flex relative w-full lg:w-1/2 flex justify-center h-[600px]">
-            <a href="pdf/sean-anderson-cv.pdf" target="_blank" class="relative group">
-                <img src="img/resume.jpg" alt="Resume" class="w-full h-full object-contain shadow-md rounded-lg shadow-teal-700">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity">
-                    <span class="text-white text-lg font-bold flex items-center gap-2">
-                        Click to Download
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-10 animate-bounce">
-                        <path fill-rule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v11.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3a.75.75 0 0 1 .75-.75Zm-9 13.5a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-            </a>
-        </div>
-               
-        
-        <!-- Right Side (Job Experience) -->
-        <div class="w-full lg:w-1/2">
-            
-            <div class="bg-white shadow-md p-5 rounded-lg border-l-4 border-teal-700 hover:scale-105 cursor-default transition-transform">
-                <h3 class="text-xl font-semibold">Assistant IT Officer</h3>
-                <p class="text-gray-600 italic">Dundee City Council, Scotland, UK (2022-2024)</p>
-                <p class="mt-2 text-gray-800">
-                    PHP development & migration, Linux system management, network administration, and IT helpdesk assistance. Ensured smooth service delivery by troubleshooting and resolving technical issues.
-                </p>
-            </div>
-
-            <div class="bg-white shadow-md p-5 rounded-lg border-l-4 border-teal-700 mt-5 hover:scale-105 cursor-default transition-transform"">
-                <h3 class="text-xl font-semibold">Web Development</h3>
-                <p class="text-gray-600 italic">Personal, Freelance</p>
-                <p class="mt-2 text-gray-800">
-                    Practicing and applying a range of coding languages in my own time, both for personal development and fun. I have worked on small projects including building a website for a local business "Wee Weddin' Hoose" based in Arbroath.
-                </p>
-            </div>
-
-            <div class="bg-white shadow-md p-5 rounded-lg border-l-4 border-teal-700 mt-5 hover:scale-105 cursor-default transition-transform"">
-                <h3 class="text-xl font-semibold">Kitchen Designer</h3>
-                <p class="text-gray-600 italic">Wren Kitchens, Dundee, UK</p>
-                <p class="mt-2 text-gray-800">
-                    Attaining details of the project including wants and budget from the client. Working to create their dream kitchen through use of showroom styles and a range of software to create plans and renders(CGIs) to present to clients for approval.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</div><!-- Experience -->
-
-
-
-<script src="scripts/scroll.js"></script>
-<script src="scripts/skills.js"></script>
-<script src="scripts/mobile-nav.js"></script>
-<script src="scripts/animations.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
